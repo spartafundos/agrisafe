@@ -1,0 +1,36 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "route":"v1/{service}",
+      "name": "req",
+      "methods": [
+        "post"
+      ]
+    },
+    {
+      "name": "tokens",
+      "type": "table",
+      "tableName": "tokens",
+      "partitionKey":"{service}",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "name": "logtable",
+      "type": "table",
+      "tableName": "log",
+      "partitionKey": "{service}",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "mytimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 */10 * * * Mon-Fri"
+    },
+    {
+      "type": "queue",
+      "direction": "out",
+      "name": "jusbrasil",
+      "queueName": "juridico-jusbrasil",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "type": "queue",
+      "direction": "out",
+      "name": "idwall",
+      "queueName": "juridico-idwall",
+      "connection": "AzureWebJobsStorage"
+    }
+  ]
+}

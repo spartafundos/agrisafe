@@ -1,0 +1,21 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "msg",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "juridico-jusbrasil",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "name": "logtable",
+      "type": "table",
+      "tableName": "log",
+      "partitionKey": "{service}",
+      "rowKey": "{id}",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    }
+  ]
+}
