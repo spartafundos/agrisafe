@@ -4,5 +4,6 @@
 
 datetime
 pyodbc
+pandas
 azure-cosmosdb-table
 azure-functions
